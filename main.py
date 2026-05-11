@@ -1,10 +1,12 @@
 aluno_nome = input('Digite seu nome: ').upper()
 
+import os
+
 def text():
     print('______       _      _   _            ______ _       _ _        _ ')
     print('| ___ \\     | |    | | (_)           |  _  (_)     (_) |      | |')
     print('| |_/ / ___ | | ___| |_ _ _ __ ___   | | | |_  __ _ _| |_ __ _| |')
-    print("| ___ \\/ _ \\| |/ _ \ __| | '_ ` _ \  | | | | |/ _` | | __/ _` | |")
+    print("| ___ \\/ _ \\| |/ _ \\ __| | '_ ` _ \\  | | | | |/ _` | | __/ _` | |")
     print('| |_/ / (_) | |  __/ |_| | | | | | | | |/ /| | (_| | | || (_| | |')
     print('|____/ \\___/|_|\\___|\\__|_|_| |_| |_| |___/ |_|\\__, |_|\\__\\__,_|_|')
     print('                                               __/ |             ')
@@ -32,12 +34,17 @@ while True:
 # aluno, se possivel nao mexam, nao sei como esta funcionando
 
     if opcao == 1:
+        os.system('cls')
         print(f'ALuno: {aluno_nome}')
         print('Digite 0 para voltar')
 
         opcao_diferente1 = int(input(f'{aluno_nome}, você deseja retornar?  '))
         if opcao_diferente1 == 0:
-            continue
+           os.system('cls')
+        continue
+
+    else:
+            print('opção invalida, por favor, tente novamente')
 
 # acabou o aluno e começa a saida pq eu quero
 
@@ -47,20 +54,30 @@ while True:
 # agr a avaliação >:3
 
     if opcao == 2:
+        os.system('cls')
         print('Sentimos muito, essa opção esta indisponivel no momento')
         print('Pressione 0 para voltar')
 
         opcao_diferente1 = int(input(f'{aluno_nome}, você deseja retornar?  '))
+        os.system('cls')
         if opcao_diferente1 == 0:
             continue
+
+    else:
+            print('opção invalida, por favor, tente novamente')
 
 # Boletim TwT
 
     if opcao == 3:
+        os.system('cls')
         print('Sentimos muito, essa opção esta indisponivel no momento ')
         print('Pressione 0 para voltar')
     
 
     opcao_diferente1 = int(input(f'{aluno_nome}, você deseja retornar? '))
+    os.system('cls')
     if opcao_diferente1 == 0:
         continue
+
+    else:
+            print('opção invalida, por favor, tente novamente')
