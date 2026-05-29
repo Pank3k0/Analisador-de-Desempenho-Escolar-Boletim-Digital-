@@ -8,6 +8,20 @@ def error():
         print('===============================================================')
         print('Pressione 0 para voltar')
 
+def menus(menu):
+    if menu == 'pricipal':
+        print('===============================================')
+    print('')
+    print('1. Alunos')
+    print('')
+    print('2. Avaliações')
+    print('')
+    print('3. Boletim')
+    print('')
+    print('0. Sair')
+    print('')
+    print('===============================================')
+    print('')
 
 aluno_nome = input('Digite seu nome: ').upper()
 
@@ -34,18 +48,7 @@ while True:
     print('')
     print('')
     show_text()
-    print('===============================================')
-    print('')
-    print('1. Alunos')
-    print('')
-    print('2. Avaliações')
-    print('')
-    print('3. Boletim')
-    print('')
-    print('0. Sair')
-    print('')
-    print('===============================================')
-    print('')
+    menus('principal')
     opcao = int(input(f'Olá, {aluno_nome} escolha a opção desejada: '))
 
 # aluno, se possivel nao mexam, nao sei como esta funcionando
