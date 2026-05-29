@@ -9,19 +9,19 @@ def error():
         print('Pressione 0 para voltar')
 
 def menus(menu):
-    if menu == 'pricipal':
+    if menu == 'principal':
         print('===============================================')
-    print('')
-    print('1. Alunos')
-    print('')
-    print('2. Avaliações')
-    print('')
-    print('3. Boletim')
-    print('')
-    print('0. Sair')
-    print('')
-    print('===============================================')
-    print('')
+        print('')
+        print('1. Alunos')
+        print('')
+        print('2. Avaliações')
+        print('')
+        print('3. Boletim')
+        print('')
+        print('0. Sair')
+        print('')
+        print('===============================================')
+        print('')
 
 aluno_nome = input('Digite seu nome: ').upper()
 
