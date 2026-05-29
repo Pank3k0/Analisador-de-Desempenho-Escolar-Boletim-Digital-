@@ -2,6 +2,9 @@ aluno_nome = input('Digite seu nome: ').upper()
 
 import os
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def text():
     print('______       _      _   _            ______ _       _ _        _ ')
     print('| ___ \\     | |    | | (_)           |  _  (_)     (_) |      | |')
@@ -34,7 +37,7 @@ while True:
 # aluno, se possivel nao mexam, nao sei como esta funcionando
 
     if opcao == 1:
-        os.system('cls')
+        clear_screen()
         print('===============================================================')
         print('')
         print(f'ALuno: {aluno_nome}')
@@ -43,7 +46,7 @@ while True:
         print('Digite 0 para voltar')
         opcao_diferente1 = int(input(f'{aluno_nome}, você deseja retornar?  '))
         if opcao_diferente1 == 0:
-           os.system('cls')
+            clear_screen()
         continue
 
     else:
@@ -57,15 +60,15 @@ while True:
 # agr a avaliação >:3
 
     if opcao == 2:
-        os.system('cls')
+        clear_screen()
         print('===============================================================')
         print('')
-        print('Sentimos muito, essa opção esta indisponivel no momento')
+        print('   Sentimos muito, essa opção esta indisponivel no momento')
         print('')
         print('===============================================================')
         print('Pressione 0 para voltar')
         opcao_diferente1 = int(input(f'{aluno_nome}, você deseja retornar?  '))
-        os.system('cls')
+        clear_screen()
         if opcao_diferente1 == 0:
             continue
 
@@ -75,16 +78,16 @@ while True:
 # Boletim TwT
 
     if opcao == 3:
-        os.system('cls')
+        clear_screen()
         print('===============================================================')
         print('')
-        print('Sentimos muito, essa opção esta indisponivel no momento ')
+        print('   Sentimos muito, essa opção esta indisponivel no momento ')
         print('')
         print('===============================================================')
     
     print('Pressione 0 para voltar')
     opcao_diferente1 = int(input(f'{aluno_nome}, você deseja retornar? '))
-    os.system('cls')
+    clear_screen()
     if opcao_diferente1 == 0:
         continue
 
