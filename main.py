@@ -61,7 +61,7 @@ while True:
         print('')
         print('===============================================================')
         input('Pressione ENTER para voltar ao menu')
-            clear_screen()
+        clear_screen()
         continue
 
 # acabou o aluno e começa a saida pq eu quero
