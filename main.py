@@ -76,13 +76,13 @@ while True:
         error()
         input('Pressione ENTER para voltar ao menu')
         clear_screen()
-            continue
+        continue
 
 # Boletim TwT
 
     if opcao == 3:
         clear_screen()
         error()
-    input('Pressione ENTER para voltar ao menu')
+        input('Pressione ENTER para voltar ao menu')
     clear_screen()
         continue
