@@ -6,7 +6,6 @@ def error():
         print('   Sentimos muito, essa opção esta indisponivel no momento')
         print('')
         print('===============================================================')
-        print('Pressione 0 para voltar')
 
 def menus(menu):
     if menu == 'principal':
