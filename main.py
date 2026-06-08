@@ -60,14 +60,9 @@ while True:
         print(f'ALuno: {aluno_nome}')
         print('')
         print('===============================================================')
-        print('Digite 0 para voltar')
-        opcao_diferente1 = int(input(f'{aluno_nome}, você deseja retornar?  '))
-        if opcao_diferente1 == 0:
+        input('Pressione ENTER para voltar ao menu')
             clear_screen()
         continue
-
-    else:
-            print('opção invalida, por favor, tente novamente')
 
 # acabou o aluno e começa a saida pq eu quero
 
@@ -79,23 +74,15 @@ while True:
     if opcao == 2:
         clear_screen()
         error()
-        opcao_diferente1 = int(input(f'{aluno_nome}, você deseja retornar?  '))
+        input('Pressione ENTER para voltar ao menu')
         clear_screen()
-        if opcao_diferente1 == 0:
             continue
-
-    else:
-            print('opção invalida, por favor, tente novamente')
 
 # Boletim TwT
 
     if opcao == 3:
         clear_screen()
         error()
-    opcao_diferente1 = int(input(f'{aluno_nome}, você deseja retornar? '))
+    input('Pressione ENTER para voltar ao menu')
     clear_screen()
-    if opcao_diferente1 == 0:
         continue
-
-    else:
-            print('opção invalida, por favor, tente novamente')
