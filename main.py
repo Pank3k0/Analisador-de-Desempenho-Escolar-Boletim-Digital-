@@ -84,5 +84,5 @@ while True:
         clear_screen()
         error()
         input('Pressione ENTER para voltar ao menu')
-    clear_screen()
+        clear_screen()
         continue
