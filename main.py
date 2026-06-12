@@ -1,13 +1,24 @@
 import os
 
-def error():
-        print('===============================================================')
-        print('')
-        print('   Sentimos muito, essa opção esta indisponivel no momento')
-        print('')
-        print('===============================================================')
+alunos = []
+notas = []
+boletim = []
+
+# função pra adicionar coisas nas listas
+
+def add(tipo):
+    if tipo == 'alunos':
+        aluno = input('digite o nome do aluno')
+        alunos.append([aluno])
+    elif tipo == 'notas':
+        nota1 = float(input('digite a nota do 1° bimestre: '))
+        nota2 = float(input('digite a nota do 2° bimestre: '))
+        notas.append([nota1, nota2])
+
+# função dos menus
 
 def menus(menu):
+    global nota1, nota2
     if menu == 'principal':
         print('===============================================')
         print('')
@@ -21,8 +32,18 @@ def menus(menu):
         print('')
         print('===============================================')
         print('')
-
-aluno_nome = input('Digite seu nome: ').upper()
+    elif menu == 'segundo':
+        print('===============================================')
+        print('')
+        print('Cadastro de Notas')
+        print('')
+        print('===============================================')
+    elif menu == 'terceiro':
+        print('===============================================')
+        print('')
+        print('Boletem Digital')
+        print('')
+        print('===============================================')
 
 # função para limpar a tela
 
@@ -48,7 +69,7 @@ while True:
     print('')
     show_text()
     menus('principal')
-    opcao = int(input(f'Olá, {aluno_nome} escolha a opção desejada: '))
+    opcao = int(input(f'Olá, {alunos} escolha a opção desejada: '))
 
 # aluno, se possivel nao mexam, nao sei como esta funcionando
 
@@ -56,10 +77,10 @@ while True:
         clear_screen()
         print('===============================================================')
         print('')
-        print(f'ALuno: {aluno_nome}')
+        print(f'ALuno: {alunos}')
         print('')
         print('===============================================================')
-        input('Pressione ENTER para voltar ao menu')
+        input('Pressione ENTER para voltar ao menu ')
         clear_screen()
         continue
 
@@ -71,17 +92,13 @@ while True:
 # agr a avaliação >:3
 
     if opcao == 2:
-        clear_screen()
-        error()
-        input('Pressione ENTER para voltar ao menu')
-        clear_screen()
+        print('em manutenção, voltamos em breve')
+        clear_screen
         continue
 
 # Boletim TwT
 
-    if opcao == 3:
-        clear_screen()
-        error()
-        input('Pressione ENTER para voltar ao menu')
-        clear_screen()
-        continue
+        if opcao == 3:
+            print('em manutenção, voltamos em breve')
+            clear_screen
+            continue
