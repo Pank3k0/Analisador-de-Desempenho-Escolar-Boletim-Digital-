@@ -115,13 +115,16 @@ while True:
         if escolha2 == 1:
             clear_screen()
             menus('adnotas')
-            add(notas)
+            add('notas')
+            clear_screen()
         
         elif escolha2 == 2:
             clear_screen()
             print('\nNotas Cadastrados\n')
             if len(notas) == 0:
+                clear_screen()
                 print('Nenhuma nota cadastrada')
+                input('pressione ENTER para voltar ')
 
             else:
                 clear_screen()
