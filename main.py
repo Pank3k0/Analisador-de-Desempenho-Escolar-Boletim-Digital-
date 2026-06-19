@@ -126,7 +126,6 @@ while True:
             else:
                 clear_screen()
                 lista()
-        
 
 
 
