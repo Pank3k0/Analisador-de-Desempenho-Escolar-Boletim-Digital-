@@ -5,6 +5,10 @@ notas = []
 boletim = []
 
 # função pra adicionar coisas nas listas
+def lista():
+    for i, aluno in enumerate(alunos, start=1):
+        print(f'{i}. {aluno}')
+
 
 def add(tipo):
     if tipo == 'alunos':
@@ -19,31 +23,34 @@ def add(tipo):
 # função dos menus
 
 def menus(menu):
-    global nota1, nota2
     if menu == 'principal':
-        print('+-------------------------+')
-        print('1. Alunos')
+        print('+-------------------------+\n')
+        print('1. Alunos\n')
+        print('2. Avaliações\n')
+        print('3. Boletim\n')
+        print('0. Sair\n')
+        print('+-------------------------+\n')
+    elif menu == 'avaliacao':
+        print('+-----------------------+\n')
+        print('1.Adicionar notas\n')
+        print('2.Ver notas cadastradas\n')
+        print('0.Voltar\n')
+        print('+-----------------------+\n')
         print('')
-        print('2. Avaliações')
-        print('')
-        print('3. Boletim')
-        print('')
-        print('0. Sair')
-        print('+-------------------------+')
-        print('')
-    elif menu == 'segundo':
-        print('+-----------------------+')
-        print('')
-        print('Cadastro de Notas')
-        print('')
-        print('+-----------------------+')
-        print('')
-    elif menu == 'terceiro':
-        print('+-------------------+')
-        print('')
-        print('Boletem Digital')
-        print('')
-        print('+-------------------+')
+    elif menu == 'alunos':
+        print('+-----------------------------+\n')
+        print('1.Adicionar alunos\n')
+        print('2.Ver alunos\n')
+        print('0.Voltar\n')
+        print('+-----------------------------+\n')
+    elif menu == 'adnotas':
+        print('+----------------------+\n')
+        print('Adicionar notas\n')
+        print('+----------------------+\n')
+    elif menu == 'Boletim':
+        print('+-------------------+\n')
+        print('Boletem Digital\n')
+        print('+-------------------+\n')
 
 # função para limpar a tela
 
@@ -65,23 +72,14 @@ def show_text():
     
 
 while True:
-    print('')
-    print('')
     show_text()
     menus('principal')
     opcao = int(input('Olá, escolha a opção desejada: '))
 
-# aluno, se possivel nao mexam, nao sei como esta funcionando
-
+#  aluno. Se possivel nao mexam, nao sei como esta funcionando
     if opcao == 1:
         clear_screen()
-        print('+-----------------------------+')
-        print('')
-        print('1.Adicionar alunos')
-        print('2.Ver alunos')
-        print('0.Voltar')
-        print('')
-        print('+-----------------------------+')
+        menus('alunos')
         escolha = int(input('Selecione a opção desejada: '))
 
         if  escolha == 1:
@@ -96,8 +94,7 @@ while True:
 
             else:
                 clear_screen()
-                for i, aluno in enumerate(alunos, start=1):
-                    print(f'{i}. {aluno}')
+                lista()
 
             input('Pressione ENTER para voltar')
             clear_screen()
@@ -112,16 +109,31 @@ while True:
 
     if opcao == 2:
         clear_screen()
-        menus('segundo')
-        for i, aluno in enumerate(alunos, start=1):
-            print(f'{i}. {aluno}')
-        add('notas')
-        clear_screen()
-        continue
+        menus('avaliacao')
+        escolha2 = int(input('selecione a opção que desejar: '))
+
+        if escolha2 == 1:
+            clear_screen()
+            menus('adnotas')
+            add(notas)
+        
+        elif escolha2 == 2:
+            clear_screen()
+            print('\nNotas Cadastrados\n')
+            if len(notas) == 0:
+                print('Nenhuma nota cadastrada')
+
+            else:
+                clear_screen()
+                lista()
+        
+
+
 
 # Boletim TwT
 
     if opcao == 3:
         clear_screen
-        menus('terceiro')
+        menus('boletim')
+
         continue
