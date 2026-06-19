@@ -8,8 +8,9 @@ boletim = []
 
 def add(tipo):
     if tipo == 'alunos':
-        aluno = input('digite o nome do aluno')
-        alunos.append([aluno])
+        aluno = input('Digite o nome do aluno: ')
+        alunos.append(aluno)
+    
     elif tipo == 'notas':
         nota1 = float(input('digite a nota do 1° bimestre: '))
         nota2 = float(input('digite a nota do 2° bimestre: '))
@@ -20,8 +21,7 @@ def add(tipo):
 def menus(menu):
     global nota1, nota2
     if menu == 'principal':
-        print('===============================================')
-        print('')
+        print('+-------------------------+')
         print('1. Alunos')
         print('')
         print('2. Avaliações')
@@ -29,21 +29,21 @@ def menus(menu):
         print('3. Boletim')
         print('')
         print('0. Sair')
-        print('')
-        print('===============================================')
+        print('+-------------------------+')
         print('')
     elif menu == 'segundo':
-        print('===============================================')
+        print('+-----------------------+')
         print('')
         print('Cadastro de Notas')
         print('')
-        print('===============================================')
+        print('+-----------------------+')
+        print('')
     elif menu == 'terceiro':
-        print('===============================================')
+        print('+-------------------+')
         print('')
         print('Boletem Digital')
         print('')
-        print('===============================================')
+        print('+-------------------+')
 
 # função para limpar a tela
 
@@ -69,20 +69,40 @@ while True:
     print('')
     show_text()
     menus('principal')
-    opcao = int(input(f'Olá, {alunos} escolha a opção desejada: '))
+    opcao = int(input('Olá, escolha a opção desejada: '))
 
 # aluno, se possivel nao mexam, nao sei como esta funcionando
 
     if opcao == 1:
         clear_screen()
-        print('===============================================================')
+        print('+-----------------------------+')
         print('')
-        print(f'ALuno: {alunos}')
+        print('1.Adicionar alunos')
+        print('2.Ver alunos')
+        print('0.Voltar')
         print('')
-        print('===============================================================')
-        input('Pressione ENTER para voltar ao menu ')
-        clear_screen()
-        continue
+        print('+-----------------------------+')
+        escolha = int(input('Selecione a opção desejada: '))
+
+        if  escolha == 1:
+            add('alunos')
+            clear_screen()
+            continue
+
+        elif escolha == 2:
+            print('\nAlunos Cadastrados\n')
+
+            if len(alunos) == 0:
+                print('Nenhum aluno cadastrado')
+
+            else:
+                clear_screen()
+                for i, aluno in enumerate(alunos, start=1):
+                    print(f'{i}. {aluno}')
+
+            input('Pressione ENTER para voltar')
+            clear_screen()
+            continue
 
 # acabou o aluno e começa a saida pq eu quero
 
@@ -92,8 +112,13 @@ while True:
 # agr a avaliação >:3
 
     if opcao == 2:
-        print('em manutenção, voltamos em breve')
-        clear_screen
+        clear_screen()
+        menus('segudo')
+        for i, aluno in enumerate(alunos, start=1):
+            print(f'{i}. {aluno}')
+        int(input('Escolha o código do Aluno: '))-1
+        add('notas')
+        clear_screen()
         continue
 
 # Boletim TwT
