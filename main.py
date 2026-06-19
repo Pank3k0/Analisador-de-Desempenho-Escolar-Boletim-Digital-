@@ -1,6 +1,6 @@
 import os
 
-alunos = []
+alunos = [['amanda soninho']]
 notas = []
 boletim = []
 
@@ -9,7 +9,7 @@ boletim = []
 def add(tipo):
     if tipo == 'alunos':
         aluno = input('Digite o nome do aluno: ')
-        alunos.append(aluno)
+        alunos.append([aluno])
     
     elif tipo == 'notas':
         nota1 = float(input('digite a nota do 1° bimestre: '))
@@ -87,7 +87,6 @@ while True:
         if  escolha == 1:
             add('alunos')
             clear_screen()
-            continue
 
         elif escolha == 2:
             print('\nAlunos Cadastrados\n')
@@ -113,17 +112,16 @@ while True:
 
     if opcao == 2:
         clear_screen()
-        menus('segudo')
+        menus('segundo')
         for i, aluno in enumerate(alunos, start=1):
             print(f'{i}. {aluno}')
-        int(input('Escolha o código do Aluno: '))-1
         add('notas')
         clear_screen()
         continue
 
 # Boletim TwT
 
-        if opcao == 3:
-            print('em manutenção, voltamos em breve')
-            clear_screen
-            continue
+    if opcao == 3:
+        clear_screen
+        menus('terceiro')
+        continue
