@@ -1,16 +1,16 @@
 import os
 
-alunos = [['amanda soninho']]
+alunos = [[1,'amanda soninho']]
 notas = []
 boletim = []
 
 def lista(tipo):
     if tipo == 'aluno':
         for aluno in alunos:
-            print(f'Aluno: {aluno}[0], - {aluno[1]}')
+            print(f'Aluno: {aluno[0]} | {aluno[1]}')
     elif tipo == 'nota':
         for nota in notas:
-            print(f'Nota : {nota[0]} - {nota[1]} - {nota[2]}')
+            print(f'Nota : {nota[0]} | {nota[1]} | {nota[2]}')
 
 # função pra adicionar coisas nas listas
 
@@ -23,7 +23,7 @@ def add(tipo):
         codigo = len(notas) + 1
         nota1 = float(input('digite a nota do 1° bimestre: '))
         nota2 = float(input('digite a nota do 2° bimestre: '))
-        notas.append([nota1, nota2])
+        notas.append([codigo, nota1, nota2])
     elif tipo == 'boletim':
         lista('aluno')
         sniggers = int(input('digite o codigo do aluno: '))
@@ -154,8 +154,7 @@ while True:
         
         if opcao3 == 1:
             clear_screen()
-            for aluno_boletim in alunos:
-                print(f'aluno{}')
+            lista('aluno')
 
             clear_screen()
             print('Boletim criado com sucesso?')
