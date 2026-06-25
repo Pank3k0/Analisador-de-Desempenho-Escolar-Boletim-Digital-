@@ -1,7 +1,7 @@
 import os
 
 alunos = [[1,'amanda soninho']]
-notas = []
+notas = [[1,8,9]]
 boletim = []
 
 def lista(tipo):
@@ -11,6 +11,9 @@ def lista(tipo):
     elif tipo == 'nota':
         for nota in notas:
             print(f'Nota : {nota[0]} | {nota[1]} | {nota[2]}')
+    elif tipo == "boletim":
+        for bol in boletim:
+            print(f"Codigo: {bol[0]} | Aluno: {alunos[bol[1]-1][1]} | Notas: {notas[bol[2]-1][1]} - {notas[bol[2]-1][2]}")
 
 # função pra adicionar coisas nas listas
 
@@ -18,16 +21,20 @@ def add(tipo):
     if tipo == 'alunos':
         codigo = len(alunos) + 1
         aluno = input('Digite o nome do aluno: ')
-        alunos.append([aluno])
+        alunos.append([codigo, aluno])
     elif tipo == 'notas':
-        codigo = len(notas) + 1
-        nota1 = float(input('digite a nota do 1° bimestre: '))
-        nota2 = float(input('digite a nota do 2° bimestre: '))
+        lista('aluno')
+        codigo = int(input('Digite o codigo do aluno: '))
+        nota1 = float(input('Digite a nota do 1° Bimestre'))
+        nota2 = float(input('Digite a nota do 2° Bimestre'))
         notas.append([codigo, nota1, nota2])
     elif tipo == 'boletim':
+        codigo = len(boletim) +1
         lista('aluno')
-        sniggers = int(input('digite o codigo do aluno: '))
-        codigo = len(boletim) + 1
+        codigoAluno = int(input('\nDigite o codigo do aluno: \n'))
+        lista("notas")
+        codidoNota = int(input("\nDigite o codigo da nota: \n"))
+        boletim.append([codigo, codigoAluno, codidoNota])
 
 # função dos menus
 
@@ -154,9 +161,18 @@ while True:
         
         if opcao3 == 1:
             clear_screen()
-            lista('aluno')
+            add('boletim')
 
             clear_screen()
-            print('Boletim criado com sucesso?')
+            print('Boletim cadastrado com sucesso?')
             input('\nPressione ENTER para voltar')
             clear_screen()
+
+        elif opcao3 == 2:
+            if boletim == 0:
+                print('Nenhum boletim cadastrados')
+            else:
+                clear_screen()
+                lista("boletim")
+                input("\nPressione ENTER para voltar ")
+                clear_screen()
