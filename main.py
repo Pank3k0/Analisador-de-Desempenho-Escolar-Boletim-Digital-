@@ -31,9 +31,10 @@ def add(tipo):
     elif tipo == 'boletim':
         codigo = len(boletim) +1
         lista('aluno')
-        codigoAluno = int(input('\nDigite o codigo do aluno: \n'))
-        lista("notas")
-        codidoNota = int(input("\nDigite o codigo da nota: \n"))
+        codigoAluno = int(input('\nDigite o codigo do aluno: '))
+        clear_screen()
+        lista("nota")
+        codidoNota = int(input("\nDigite o codigo da nota: "))
         boletim.append([codigo, codigoAluno, codidoNota])
 
 # função dos menus
@@ -162,17 +163,14 @@ while True:
         if opcao3 == 1:
             clear_screen()
             add('boletim')
-
             clear_screen()
-            print('Boletim cadastrado com sucesso?')
+            print('Boletim criado com sucesso!!')
             input('\nPressione ENTER para voltar')
             clear_screen()
 
         elif opcao3 == 2:
-            if boletim == 0:
-                print('Nenhum boletim cadastrados')
-            else:
-                clear_screen()
-                lista("boletim")
-                input("\nPressione ENTER para voltar ")
-                clear_screen()
+            clear_screen()
+            print('+-----Boletins cadastrados-----+\n')
+            lista("boletim")
+            input("\nPressione ENTER para voltar ")
+            clear_screen()
